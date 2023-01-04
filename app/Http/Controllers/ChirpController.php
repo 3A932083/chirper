@@ -14,8 +14,10 @@ class ChirpController extends Controller
      */
     public function index()
     {
-        //顯示chirps.index頁面
-        return view('chirps.index');
+        //顯示留言
+        return view('chirps.index', [
+            'chirps' => Chirp::with('user')->latest()->get(),
+        ]);
     }
 
     /**
