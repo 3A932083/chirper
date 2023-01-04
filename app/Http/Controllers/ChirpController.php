@@ -14,7 +14,8 @@ class ChirpController extends Controller
      */
     public function index()
     {
-        return 'HiHi~~~';
+        //顯示chirps.index頁面
+        return view('chirps.index');
     }
 
     /**
