@@ -36,7 +36,15 @@ class ChirpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //驗證資料
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+        
+        //儲存request至資料庫
+        $request->user()->chirps()->create($validated);
+
+        return redirect(route('chirps.index'));
     }
 
     /**
