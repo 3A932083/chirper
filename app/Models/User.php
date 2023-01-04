@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //一個使用者用有多個留言
+    public function chirps()
+    {
+        return $this->hasMany(Chirp::class);
+    }
 }
