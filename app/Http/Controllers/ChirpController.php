@@ -40,7 +40,7 @@ class ChirpController extends Controller
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
-        
+
         //儲存request至資料庫
         $request->user()->chirps()->create($validated);
 

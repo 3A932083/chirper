@@ -11,4 +11,10 @@ class Chirp extends Model
     protected $fillable = [
         'message',
     ];
+
+    //留言屬於某一個使用者
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
